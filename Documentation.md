@@ -12,3 +12,20 @@
 # Assignment 2 - Cloud Server Project Documentation
 
 This documentation will contain a list of steps taken to deploy the cloud server, along with the development of the script on the website.
+
+# Deploying an Amazon Web Services EC2 Instance
+The first step required is the launching of a new Amazon EC2 Ubuntu instance.
+Go to [AWS EC2 Console](https://console.aws.amazon.com/ec2/) and log in using your existing account.
+From the EC2 Console, in the navigation pane, click on "Instances" and then "Launch Instances" on the top right. 
+
+# Launching an Instance
+Follow the steps below for launching a Ubuntu free tier instance:
+* Name the instance accordingly - *Studylist.space web server*
+* Pick the Linux Distribution as Ubuntu and select **Ubuntu Server 24.04 LTS (HVM)**
+   * Version 24.04 LTS is used instead of 22.04 LTS as it has improved security and better long-term support.
+* Choose the *t2.micro* instance type
+* 
+* 
+* 
+* 
+* 
