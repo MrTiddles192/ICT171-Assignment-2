@@ -23,9 +23,14 @@ Follow the steps below for launching a Ubuntu free tier instance:
 * Name the instance accordingly - *Studylist.space web server*
 * Pick the Linux Distribution as Ubuntu and select **Ubuntu Server 24.04 LTS (HVM)**
    * Version 24.04 LTS is used instead of 22.04 LTS as it has improved security and better long-term support.
-* Choose the *t2.micro* instance type
-* 
-* 
-* 
-* 
-* 
+* Choose the *t2.micro* instance type - ensure settings match the image below.
+![Example](/Images/instance-settings.png)
+
+* Create a new Key Pair - name it LoginKey and click "Create key pair"
+* Click "Create Security Group" and select the following:
+   * Allow SSH traffic from - set IP Address to Anywhere (0.0.0.0/0)
+   * Allow HTTPS traffic from the internet
+   * Allow HTTP traffic from the internet
+* Configure storage as `1x 30GiB gp3 Root volume, 3000 IOPS, Not encyrpted`
+* Once the above steps are complete, click "Launch Instance".
+* Once done, click "View All Instances" and check the instance's state shows "Running"
