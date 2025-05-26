@@ -44,3 +44,41 @@ Go to the directory containing 'LoginKey.pem' and in the directory bar type in '
 Paste the below command, replacing <IP_ADDRESS> with the one gathered earlier.
 
       ssh -i ./LoginKey.pem ubuntu@<IP_ADDRESS>
+
+When prompted with "Are you sure you want to continue connecting (yes/no/[fingerprint])?", type `yes` and hit enter.
+
+# Misc Configuration
+## Updating Packages
+For good practice, upgrade all system packages using the following commands:
+
+      sudo apt update
+Then:
+
+      sudo apt upgrade -y
+
+Once complete, all system packages should be up to date.
+
+## Enabling Ubuntu Firewall
+For security, it's a good idea to enable Ubuntu Firewall to minimise vulnerability.
+Run the following commands:
+
+      sudo ufw allow ssh
+Then:  
+
+      sudo ufw allow http
+Then:  
+
+      sudo ufw allow https
+Finally:
+
+      sudo ufw enable
+
+# Installing Apache Web Server
+Apache web server is required to host the web page and can be installed by the following steps.
+
+      sudo apt install apache2 -y
+
+To verify installation, in your own internet browser, navigate to `http://<IP_ADDRESS>/`
+
+This should load the Apache2 Default Page shown below.
+![](/Images/apache2-default-page.png)
