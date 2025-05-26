@@ -26,11 +26,21 @@ Follow the steps below for launching a Ubuntu free tier instance:
 * Choose the *t2.micro* instance type - ensure settings match the image below.
 ![Example](/Images/instance-settings.png)
 
-* Create a new Key Pair - name it LoginKey and click "Create key pair"
+* Create a new Key Pair - name it LoginKey and click "Create key pair" - download the Key Pair.
 * Click "Create Security Group" and select the following:
-   * Allow SSH traffic from - set IP Address to Anywhere (0.0.0.0/0)
-   * Allow HTTPS traffic from the internet
-   * Allow HTTP traffic from the internet
-* Configure storage as `1x 30GiB gp3 Root volume, 3000 IOPS, Not encyrpted`
+   * Allow SSH traffic from - set IP Address to Anywhere (0.0.0.0/0).
+   * Allow HTTPS traffic from the internet.
+   * Allow HTTP traffic from the internet.
+* Configure storage as `1x 30GiB gp3 Root volume, 3000 IOPS, Not encyrpted`.
 * Once the above steps are complete, click "Launch Instance".
-* Once done, click "View All Instances" and check the instance's state shows "Running"
+* Once done, click "View All Instances" and check the instance's state shows "Running".
+   * To preserve free tier hours, stop the instance until ready to proceed to the next step.
+   * To stop: Select the instance, click instance state and 'Stop Instance'.
+
+# Accessing the Instance
+On the Amazon EC2 Instances page, in the list of instances, select the web server and in the bottom pop up, note down the Public IPv4 Address for later use.
+To access the instance via terminal access, use SSH via Windows PowerShell.
+Go to the directory containing 'LoginKey.pem' and in the directory bar type in 'powershell' to launch Windows PowerShell.
+Paste the below command, replacing <IP_ADDRESS> with the one gathered earlier.
+
+      ssh -i ./LoginKey.pem ubuntu@<IP_ADDRESS>
