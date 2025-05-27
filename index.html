@@ -33,8 +33,20 @@ padding: 8px -;
 textarea {
 width: 100%;
 height: 100px;
+border-radius: 8px;
+background-color: #f4f4f4;
 margin-top: 10px
 resize: vertical;
+}
+
+button {
+margin-top: 10px;
+padding: 10px 20px;
+background-color: #3cb06c;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
 }
 
 footer p {
@@ -83,7 +95,8 @@ margin-top: 10px;
 <section>
 <h2>📃 Notes</h2>
 <p>Write notes in the section below</p>
-<textarea placeholder="Type your notes here..."></textarea><br>
+<textarea id="notes" placeholder="Type your notes here..."></textarea><br>
+<button onclick="download_notes()">Save Notes</button>
 </section>
 
 
@@ -103,6 +116,21 @@ margin-top: 10px;
 <p>This work is licensed under a Creative Commons Attribution 4.0 International License.</p>
 </div>
 </footer>
+
+<script>
+function download_notes() {
+	const text = document.getElementById('notes').value;
+	const blob = new Blob([text], { type: 'text/plain'});
+	const link = document.createElement('a');
+	link.download = 'notes.txt';
+	link.href = URL.createObjectURL(blob);
+	link.click();
+	URL.revokeObjectURL(link.href);
+	}
+
+
+</script>
+
 
 </body>
 
