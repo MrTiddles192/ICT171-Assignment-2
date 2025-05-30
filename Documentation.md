@@ -13,6 +13,8 @@
 
 This documentation will contain a list of steps taken to deploy the cloud server, along with the development of the script on the website.
 
+Website located at [studylist.space](https://studylist.space)
+
 # Deploying an Amazon Web Services EC2 Instance
 The first step required is the launching of a new Amazon EC2 Ubuntu instance.
 Go to [AWS EC2 Console](https://console.aws.amazon.com/ec2/) and log in using your existing account.
