@@ -26,7 +26,7 @@ Follow the steps below for launching a Ubuntu free tier instance:
 * Pick the Linux Distribution as Ubuntu and select **Ubuntu Server 24.04 LTS (HVM)**
    * Version 24.04 LTS is used instead of 22.04 LTS as it has improved security and better long-term support.
 * Choose the *t2.micro* instance type - ensure settings match the image below.
-![Example](/Images/instance-settings.png)
+  <img src="/Images/instance-settings.png" width="500">
 
 * Create a new Key Pair - name it LoginKey and click "Create key pair" - download the Key Pair.
 * Click "Create Security Group" and select the following:
@@ -75,6 +75,14 @@ Finally:
 
       sudo ufw enable
 
+Verify the correct setup of ubuntu firewall by running the below command:
+
+      sudo ufw status
+
+The output of this command should match the below.
+
+<img src="/Images/UFW.png" width="400">
+
 # Installing Apache Web Server
 Apache web server is required to host the web page and can be installed by the following steps.
 
@@ -83,4 +91,5 @@ Apache web server is required to host the web page and can be installed by the f
 To verify installation, in your own internet browser, navigate to `http://<IP_ADDRESS>/`
 
 This should load the Apache2 Default Page shown below.
-![](/Images/apache2-default-page.png)
+
+<img src="/Images/apache2-default-page.png" width="400">
