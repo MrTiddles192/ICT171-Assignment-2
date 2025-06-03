@@ -48,6 +48,15 @@ border: none;
 border-radius: 5px;
 cursor: pointer;
 }
+button.dm {
+margin-top: 10px;
+padding: 10px 20px;
+background-color: ##30427a;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
 
 footer p {
 font-size: 0.9em;
@@ -58,6 +67,32 @@ colour: #666;
 font-size: 0.8em;
 margin-top: 10px;
 }
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark-mode header,
+body.dark-mode section,
+body.dark-mode footer {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #333;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+body.dark-mode button {
+  background-color: #444;
+}
+
+body.dark-mode a {
+  color: #86c5ff;
+}
 
 </style>
 </head>
@@ -66,15 +101,18 @@ margin-top: 10px;
 <header>
 <h1>Studylist</h1>
 <p>Student Productivity Website | By Tom Dutch <strong>(34089911)</strong></p>
+<button onclick="toggleDarkMode()" id="darkModeBtn">Dark Mode</button>
 </header>
 
 
 <section>
 <h2>📝 To-Do List</h2>
 <ul>
-<li><input type="checkbox"> Task 1</li>
-<li><input type="checkbox"> Task 2</li>
-<li><input type="checkbox"> Task 3</li>
+<li><input type="checkbox"> Check Email</li>
+<li><input type="checkbox"> Review LMS for new tasks</li>
+<li><input type="checkbox"> Check Teams for any messages</li>
+<li><input type="checkbox"> Review Chapter 2 readings for ICT159</li>
+<li><input type="checkbox"> Finish off ICT171 Assignment 2</li>
 </ul>
 </section>
 
@@ -83,11 +121,11 @@ margin-top: 10px;
 <h2>📆 Weekly Planner</h2>
 <p>Use this section to plan out your weekly schedule with classes and activities</p>
 <ul>
-<li>Monday: Class1</li>
-<li>Tuesday: Class2</li>
-<li>Wednesday: Class3</li>
-<li>Thursday: Class4</li>
-<li>Friday: Class5</li>
+<li>Monday: ICT 159 - Lab 12:30pm</li>
+<li>Tuesday: ICT 145 - Lecture 11:00am</li>
+<li>Wednesday: ICT 145 - Workshop 3:30pm</li>
+<li>Thursday: ICT 159 - Lab 9:30am</li>
+<li>Friday: ICT 171 - Lab 2:30pm</li>
 </ul>
 </section>
 
@@ -134,6 +172,15 @@ function download_notes() {
 	link.click();
 	URL.revokeObjectURL(link.href); // Free memory
 	}
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+
+  // Optional: update button text
+  var button = document.getElementById("darkModeBtn");
+  button.textContent = document.body.classList.contains("dark-mode")
+    ? "Light Mode"
+    : "Dark Mode";
+}
 
 
 </script>
