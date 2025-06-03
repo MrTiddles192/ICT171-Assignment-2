@@ -126,13 +126,13 @@ margin-top: 10px;
 
 <script>
 function download_notes() {
-	const text = document.getElementById('notes').value;
-	const blob = new Blob([text], { type: 'text/plain'});
-	const link = document.createElement('a');
-	link.download = 'notes.txt';
-	link.href = URL.createObjectURL(blob);
+	const text = document.getElementById('notes').value; // Retrieve content from element 'Notes'
+	const blob = new Blob([text], { type: 'text/plain'}); // Convert to blob for transfer
+	const link = document.createElement('a'); // Creates document
+	link.download = 'notes.txt'; // Indicates where browser can download
+	link.href = URL.createObjectURL(blob); // URL points to blob object for download
 	link.click();
-	URL.revokeObjectURL(link.href);
+	URL.revokeObjectURL(link.href); // Free memory
 	}
 
 
