@@ -93,3 +93,13 @@ To verify installation, in your own internet browser, navigate to `http://<IP_AD
 This should load the Apache2 Default Page shown below.
 
 <img src="/Images/apache2-default-page.png" width="400">
+
+# Setting up DNS Record
+Log into [Namecheap](namecheap.com) open the 'Dashboard' tab when hovering over the username.
+Next to the domain name 'studylist.space', click 'MANAGE'. Navigate to the 'Advanced DNS' Tab.
+Under 'Host Records' create the following records:
+|Type|Host|Value|TTL|
+|----|----|-----|---|
+|A Record|www|<IP_ADDRESS>|Automatic|
+|CNAME Record|@|www.studylist.space|Automatic|
+
