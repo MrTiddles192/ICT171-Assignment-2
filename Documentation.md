@@ -26,6 +26,7 @@ Follow the steps below for launching a Ubuntu free tier instance:
 * Pick the Linux Distribution as Ubuntu and select **Ubuntu Server 24.04 LTS (HVM)**
    * Version 24.04 LTS is used instead of 22.04 LTS as it has improved security and better long-term support.
 * Choose the *t2.micro* instance type - ensure settings match the image below.
+
   <img src="/Images/instance-settings.png" width="500">
 
 * Create a new Key Pair - name it LoginKey and click "Create key pair" - download the Key Pair.
@@ -48,6 +49,9 @@ Paste the below command, replacing <IP_ADDRESS> with the one gathered earlier.
       ssh -i ./LoginKey.pem ubuntu@<IP_ADDRESS>
 
 When prompted with "Are you sure you want to continue connecting (yes/no/[fingerprint])?", type `yes` and hit enter.
+Your CLI output should match below if successfully connected.
+
+<img src="/Images/SSH.png" width="400">
 
 # Misc Configuration
 ## Updating Packages
@@ -103,3 +107,29 @@ Under 'Host Records' create the following records:
 |A Record|www|<IP_ADDRESS>|Automatic|
 |CNAME Record|@|www.studylist.space|Automatic|
 
+# Setting up HTTPS
+HTTPS must be set up for secure connection to the website. This will be set up using the free service called Let's Encrypt.
+Run the following commands once logged into server via SSH.
+
+Install Certbot to set up SSL/TLS certificate.
+
+      sudo snap install --classic certbot
+This command will take several minutes due to the limited bandwidth of the t2.micro instance.
+Once complete, you should see the image below as output.
+
+<img src="/Images/certbot.png" width="400">
+
+Then run the below command to allow certbot to be run:
+
+      sudo ln -s /snap/bin/certbot /usr/bin/certbot
+To set up certbot, run:
+
+      sudo certbot --apache
+When prompted for an email, hit 'Enter' and enter the domain name `studylist.space`. 
+The following output should be displayed.
+
+<img src="/Images/certbot-output.png" width="400">
+
+Once complete, SSL should be set up and HTTPS should work. Navigate to [https://studylist.space](https://studylist.space) to verify the operation of a HTTPS connection.
+
+## That is the setup complete
