@@ -10,6 +10,7 @@
 ```
 
 # Assignment 2 - Cloud Server Project Documentation
+Created by Tom Dutch 34089911 for ICT171 Assignment 2: Cloud Server Project
 
 This documentation will contain a list of steps taken to deploy the cloud server, along with the development of the script on the website.
 
