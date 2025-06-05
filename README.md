@@ -6,3 +6,5 @@ Website located at [studylist.space](https://studylist.space).
 Video explainer link on website.
 
 Documentation located in [Documentation.md](/Documentation.md)
+
+The scripts on this website are the 'Dark Mode' feature and the 'Save Notes' feature - both written in Javascript. Documentation in Github commits.
