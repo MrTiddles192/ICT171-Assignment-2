@@ -103,7 +103,7 @@ body.dark-mode a {
 <header>
 <h1>Studylist</h1>
 <p>Student Productivity Website | By Tom Dutch <strong>(34089911)</strong></p>
-<button onclick="toggleDarkMode()" id="darkModeBtn">Dark Mode</button>
+<button onclick="toggleDarkMode()" id="darkModeBtn">Dark Mode</button> <!-- When this button is clicked, it toggles the 'toggleDarkMode' javascript   -->
 </header>
 
 
@@ -177,13 +177,12 @@ function download_notes() {
 	URL.revokeObjectURL(link.href); // Free memory
 	}
 function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
+  document.body.classList.toggle("dark-mode"); // Toggles the CSS class of 'dark-mode' when the script is executed.
 
-  // Optional: update button text
   var button = document.getElementById("darkModeBtn");
-  button.textContent = document.body.classList.contains("dark-mode")
-    ? "Light Mode"
-    : "Dark Mode";
+  button.textContent = document.body.classList.contains("dark-mode") // When clicked, it adds the 'darkmode' CSS code into the body of the HTML, switching it to the dark theme.
+    ? "Light Mode" // If it says Dark Mode in button, switch txt to Light Mode
+    : "Dark Mode"; // If it says Light Mode in button, switch txt to Dark Mode
 }
 
 
