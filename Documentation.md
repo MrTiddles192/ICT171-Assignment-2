@@ -134,3 +134,43 @@ The following output should be displayed.
 Once complete, SSL should be set up and HTTPS should work. Navigate to [https://studylist.space](https://studylist.space) to verify the operation of a HTTPS connection.
 
 ## That is the setup complete
+
+# Script Documentation
+## saveNotes()
+This script allows the user to save any text written in the note taking text box onto their device. This is done using Javascript.
+The code below outlines the code used.
+How the code works:
+   1. Retrieves the content from the text area by ID. Text box is identified as 'notes'.
+   2. Stores the content in a blob - this is an object that is used to store usable data such as text and images.
+   3. Creates a link for the browser to download the file which points to the blob to be downloaded.
+   4. Triggers a 'click' that link so the browser downloads the file.
+   5. Revokes the object URL and object memory to free up browser memory.
+```
+function download_notes() {
+	const text = document.getElementById('notes').value; // Retrieve content from element 'Notes'
+	const blob = new Blob([text], { type: 'text/plain'}); // Convert to blob for transfer
+	const link = document.createElement('a'); // Creates document
+	link.download = 'notes.txt'; // Indicates where browser can download
+	link.href = URL.createObjectURL(blob); // URL points to blob object for download
+	link.click();
+	URL.revokeObjectURL(link.href); // Free memory
+	}
+ ```
+
+## toggleDarkMode()
+This script toggles a dark mode feature on the website that users can use to change the presentation of the website for ease of viewing.
+This script essentially uses if statements to activate dark mode.
+   1. When the button is clicked, the dark-mode class on the <body> element is activated.
+   2. If dark-mode is already present, it will remove it and switch to light mode.
+   3. If dark-mode is not present, it will add it and switch to dark mode.
+   4. Updates the button to say Light/Dark mode depeneding on the text already there.
+```
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode"); // Toggles the CSS class of 'dark-mode' when the script is executed.
+
+  var button = document.getElementById("darkModeBtn");
+  button.textContent = document.body.classList.contains("dark-mode") // When clicked, it adds the 'darkmode' CSS code into the body of the HTML, switching it to the dark theme.
+    ? "Light Mode" // If it says Dark Mode in button, switch txt to Light Mode
+    : "Dark Mode"; // If it says Light Mode in button, switch txt to Dark Mode
+}
+```
