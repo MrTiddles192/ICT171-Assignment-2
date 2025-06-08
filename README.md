@@ -3,7 +3,7 @@ This repository will be used to maintain version control for my ICT171 Assignmen
 
 Website located at [studylist.space](https://studylist.space).
 
-Video explainer link on website.
+Video explainer link on website. Also located at [video.studylist.space](http://video.studylist.space)
 
 Documentation located in [Documentation.md](/Documentation.md)
 
